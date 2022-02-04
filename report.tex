@@ -1,0 +1,136 @@
+
+\documentclass{ecpreport-publicv1}
+%\usepackage{draftwatermark}        % Use this if you want to have a DRAFT watermark
+\usepackage{wrapfig}
+\usepackage{subfig}
+\usepackage{xcolor,colortbl}
+\usepackage{array}
+\usepackage{float} %added to wrangle tables and figures
+\usepackage[disable]{todonotes}%added todonotes for hardcopy notes and to span repos -STC
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage{kpfonts}
+
+\newcolumntype{g}{>{\columncolor{Gray}}c}
+\newcolumntype{w}{>{\columncolor{white}}c}
+%%\begin{flushright}
+%%
+%%\end{flushright}
+\newcolumntype{y}{>{\columncolor{LightCyan}}c}
+
+%\usepackage{subcaption}
+
+\usepackage[framemethod=TikZ,backgroundcolor=gray!40,shadow=true,roundcorner=8pt]{mdframed}
+\usetikzlibrary{shadows}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=blue,
+	linkcolor=blue,
+	urlcolor=blue
+}
+%\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{listings}
+\usepackage{csquotes}
+\lstset{
+  basicstyle=\linespread{0.94}\footnotesize\ttfamily,
+  columns=fullflexible,
+  language=C++,
+  escapeinside={(*@}{@*)},
+  breaklines=true,
+}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{paralist}
+
+
+% Re-do the titleformat to better suite a small report
+\titleformat{\section}{\centering\bf\large}{\thetitle.}{1ex}{}[]
+\titleformat{\subsection}{\bf}{\thetitle}{1ex}{}[]
+\titleformat*{\subsubsection}{\bf\itshape}
+
+
+%%---------------------------------------------------------------------------%%
+%% VARIABLES
+%%---------------------------------------------------------------------------%%
+\author{Author 1, Organization 1
+  \and Author 2, Organization 2
+  }
+\title{ECP Report Template}
+%\date{\today}
+\date{February 03, 2022}
+%\wbs{2.3}
+\id{ECP Report Template ID}
+%\reportnum{ECP Report Template Number}
+\reportnum{} % Should remain empty to not show above the title
+
+
+%%---------------------------------------------------------------------------%%
+%% FRONT MATTER
+%%---------------------------------------------------------------------------%%
+
+\begin{document}
+\frontmatter
+
+
+% Example of a Revision log, but this is rarely used in a Report
+%%---------------------------------------------------------------------------%%
+%% REVISION LOG
+
+%\begin{revlog}
+%
+%  1.0 & July 1, 2018 & \textit{ECP ST Capability Assessment Report } \\\hline
+%  1.5 & February 1, 2019 & \textit{Second release} \\\hline
+%  2.0 & February 1, 2020 & \textit{Third release} \\\hline
+%  2.5 & November 19, 2020 & \textit{Fourth release}\\\hline
+%  3.0 & November 22, 2021 & \textit{Fifth release--DRAFT} \\\hline
+%\end{revlog}
+
+%%---------------------------------------------------------------------------%%
+
+% EXECUTIVE SUMMARY
+% Anything in-between \begin{abstract} and \end{abstract} will be under the headline "EXECUTIVE SUMMARY"
+
+
+% The following can be enabled, but in reports, they are rarely needed
+%\tableofcontents
+%\listoffigures
+%\listoftables
+
+%%---------------------------------------------------------------------------%%
+% MAIN DOCUMENT
+%%---------------------------------------------------------------------------%%
+
+\mainmatter
+\input{introduction}
+
+
+%%---------------------------------------------------------------------------%%
+%\vspace{3in}
+\clearpage
+
+\newpage
+\section*{Acknowledgments}
+
+This research was supported by the Exascale Computing Project (ECP), Project
+Number: 17-SC-20-SC, a collaborative effort of two DOE organizations---the
+Office of Science and the National Nuclear Security
+Administration---responsible for the planning and preparation of a capable
+Exascale ecosystem---including software, applications, hardware, advanced
+system engineering, and early testbed platforms---to support the nation's
+Exascale computing imperative.
+
+%%---------------------------------------------------------------------------%%
+%% References
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}
